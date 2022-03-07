@@ -1,14 +1,19 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 export default createStore({
   state: {
+    isHost: "false",
+    isOnlyAudio: false,
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
+    setHost(state, value) {
+      state.isHost = value;
+    },
+    setConnectionType(state, value) {
+      state.isOnlyAudio = value;
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  actions: {},
+  modules: {},
+});

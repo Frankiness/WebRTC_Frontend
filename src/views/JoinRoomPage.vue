@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { useStore } from "vuex";
 const { useRoute } = require("vue-router");
 
@@ -17,17 +17,13 @@ import JoinRoomContent from "../components/JoinRoomPage/JoinRoomContent.vue";
 const store = useStore();
 // let props = defineProps();
 let route = useRoute();
-// let isRoomHost = false;
 let isRoomHost = route.query.host;
 if (isRoomHost) {
   store.commit("setHost", isRoomHost);
 }
 
 onMounted(() => {
-  // if (isRoomHost) {
-
   console.log("路由的参数：" + route.query.host);
-  // }
 });
 </script>
 <style lang="less" scoped>
@@ -49,16 +45,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.error_message_container {
-  display: flex;
-  height: 50px;
-  margin-left: 35px;
-}
-
-.error_message_paragraph {
-  color: red;
 }
 
 .loading_overlay_container {
@@ -92,41 +78,5 @@ onMounted(() => {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.join_room_buttons_container {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-.join_room_cancel_button {
-  width: 80px;
-  margin-right: 35px;
-  height: 30px;
-  background-color: white;
-  border: 1px solid gray;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.join_room_cancel_button:hover {
-  background-color: #e5e5e5;
-}
-
-.join_room_success_button {
-  width: 80px;
-  margin-right: 15px;
-  height: 30px;
-  background-color: #2d8cff;
-  border-radius: 8px;
-  border: none;
-  font-weight: 700;
-  color: white;
-  transition: 0.3s;
-}
-
-.join_room_success_button:hover {
-  background-color: blue;
 }
 </style>

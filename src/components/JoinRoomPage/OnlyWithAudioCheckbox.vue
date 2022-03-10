@@ -21,7 +21,7 @@ let isOnlyAudio = computed(() => {
 });
 // 选择是否开启视频连接
 const handleConnectionType = () => {
-  store.commit("setConnectionType", true);
+  store.commit("setConnectionType", !isOnlyAudio.value);
 };
 </script>
 
@@ -29,7 +29,7 @@ const handleConnectionType = () => {
 .checkbox_container {
   display: flex;
   margin-left: 35px;
-  margin-top: 5px;
+  // margin-top: 5px;
   align-items: center;
 }
 

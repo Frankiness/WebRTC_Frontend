@@ -1,0 +1,29 @@
+<template>
+  <div class="room_label">
+    <p class="room_label_paragraph">会议房间号:{{ roomId }}</p>
+  </div>
+</template>
+
+<script setup>
+import { defineProps } from "vue";
+let { roomId } = defineProps(["roomId"]);
+</script>
+
+<style lang="less" scoped>
+.room_label {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  z-index: 4;
+}
+
+.room_label_paragraph {
+  font-size: 17px;
+  color: white;
+  margin-top: 0;
+  padding: 18px 38px;
+  background: linear-gradient(168.68deg, #0052c9 1.12%, #0a91db 100%);
+  border-radius: 0px 0px 15px 15px;
+}
+</style>

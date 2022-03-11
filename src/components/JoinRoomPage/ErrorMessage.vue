@@ -1,12 +1,13 @@
 <template>
-  <div class="error_message_container" v-show="errorMessage">
-    <span class="error_message_paragraph">{{ errorMessage }}</span>
+  <div class="error_message_container" v-show="msg">
+    <span class="error_message_paragraph">{{ msg }}</span>
   </div>
 </template>
 
 <script setup>
-import { defineProps } from "vue";
-let { errorMessage } = defineProps(["errorMessage"]);
+import { defineProps, inject, toRef } from "vue";
+let msg = inject("errorMessage");
+console.log(msg);
 </script>
 
 <style lang="less" scoped>

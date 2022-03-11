@@ -10,28 +10,24 @@
     class="join_room_input"
     type="text"
     placeholder="请输入姓名..."
-    @change="handleRoomIdValue"
+    @change="handleUsernameValue"
   />
 </template>
 
 <script setup>
+const { useStore } = require("vuex");
+
 let props = defineProps({
-  roomIdValue: {
-    type: String,
-    default: "123",
-  },
-  // setRoomIdValue: String,
-  nameValue: {
-    type: String,
-    default: "123",
-  },
-  // setNameValue: String,
   isRoomHost: String,
 });
-console.log(props.isRoomHost);
+let store = useStore();
+// 获取用户输入的房间号
 const handleRoomIdValue = (e) => {
   console.log(e.target.value);
+  store.commit("setInputRoomId", e.target.value);
 };
+// 用户输入名字
+const handleUsernameValue = () => {};
 </script>
 
 <style lang="less" scoped>

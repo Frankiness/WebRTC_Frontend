@@ -18,6 +18,7 @@ let { buttonText, cancelButton } = defineProps({
     default: false,
   },
 });
+// 动态class name
 let cancelClassName = "join_room_cancel_button",
   successClassName = "join_room_success_button";
 </script>

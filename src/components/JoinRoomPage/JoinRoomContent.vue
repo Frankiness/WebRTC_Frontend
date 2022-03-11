@@ -3,12 +3,12 @@
     <JoinRoomInputs :isRoomHost="isRoomHost"></JoinRoomInputs>
   </div>
   <Checkbox></Checkbox>
-  <ErrorMessage :errorMessage="errorText"></ErrorMessage>
+  <ErrorMessage></ErrorMessage>
   <JoinRoomButtons :isRoomHost="isRoomHost"></JoinRoomButtons>
 </template>
 
 <script setup>
-import { computed, ref } from "@vue/runtime-core";
+import { computed, ref, provide } from "@vue/runtime-core";
 import JoinRoomInputs from "./JoinRoomInputs.vue";
 import Checkbox from "./OnlyWithAudioCheckbox.vue";
 import ErrorMessage from "./ErrorMessage.vue";
@@ -20,7 +20,10 @@ let store = new useStore();
 let isRoomHost = computed(() => {
   return store.state.isHost;
 });
-let errorText = "房间不存在";
+
+//provide提供错误提示信息
+let errorMsg = ref("");
+provide("errorMessage", errorMsg);
 </script>
 
 <style lang="less" scoped>

@@ -4,6 +4,8 @@ export default createStore({
   state: {
     isHost: "false",
     isOnlyAudio: false,
+    inputRoomId: "",
+    inputUsername: "",
   },
   getters: {},
   mutations: {
@@ -12,6 +14,12 @@ export default createStore({
     },
     setConnectionType(state, value) {
       state.isOnlyAudio = value;
+    },
+    setInputRoomId(state, value) {
+      state.inputRoomId = value;
+    },
+    setInputUsername(state, value) {
+      state.inputUsername = value;
     },
   },
   actions: {},

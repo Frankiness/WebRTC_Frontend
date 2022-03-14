@@ -1,0 +1,18 @@
+.video_button_container {
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.video_button_image {
+  height: 80%;
+  padding: 10px;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.video_button_image:hover {
+  background: blue;
+  padding: 10px;
+  border-radius: 25px;
+}

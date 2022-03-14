@@ -1,10 +1,17 @@
 <template>
   <div class="participants_container">
-    <p class="">参与人员</p>
+    <div v-for="(item, index) in participants">
+      <p class="participants_paragraph">{{ item.identity }}</p>
+      <div
+        class="participants_separator_line"
+        v-if="index !== participants.length - 1"
+      ></div>
+    </div>
   </div>
 </template>
 
 <script setup>
+import SingleParticipant from "./SingleParticipant.vue";
 let participants = [
   {
     identity: "Jack",
@@ -30,7 +37,6 @@ let participants = [
   align-content: flex-start;
   height: 50%;
 }
-
 .participants_paragraph {
   color: black;
   text-align: start;
@@ -45,7 +51,6 @@ let participants = [
   background-color: #e5e5e5;
   border-radius: 8px;
 }
-
 .participants_separator_line {
   width: calc(100% - 80px);
   height: 2px;

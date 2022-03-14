@@ -1,0 +1,35 @@
+<template>
+  <p class="participants_paragraph">{{ identity }}</p>
+  <span class="participants_separator_line"></span>
+</template>
+
+<script setup>
+import { defineProps } from "vue";
+let { identity, lastIndex } = defineProps(["participants"]);
+console.log(identity);
+</script>
+
+<style lang="less" scoped>
+.participants_paragraph {
+  color: black;
+  text-align: start;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 0.5s;
+  margin: 0 40px;
+  padding: 10px 0px;
+}
+
+.participants_paragraph:hover {
+  background-color: #e5e5e5;
+  border-radius: 8px;
+}
+.participants_separator_line {
+  width: calc(100% - 80px);
+  height: 2px;
+  background-color: #e5e5e5;
+  margin-left: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+</style>
